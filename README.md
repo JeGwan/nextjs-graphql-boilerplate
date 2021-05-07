@@ -2,6 +2,20 @@
 
 ## 1. Pre-requisite
 
+0. node를 설치한다.
+
+1. yarn 을 설치한다.
+
+```
+npm install --global yarn
+```
+
+2. git clone 한다.
+
+```
+git clone https://github.com/JeGwan/nextjs-graphql-boilerplate.git
+```
+
 ### 1.1. dependencies install
 
 ```sh

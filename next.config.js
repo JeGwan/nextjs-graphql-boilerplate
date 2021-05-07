@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 // SSR, CSR 모두 환경변수를 공급해주려면 여기서 한번 process.env에 있는 걸 묶어줘야 합니다.
 module.exports = {
   env: {

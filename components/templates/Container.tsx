@@ -7,8 +7,11 @@ import { APP_NAME } from "@lib/constants";
 
 const ContainerComp = styled.div`
   & > header {
-    & > nav {
-    }
+    background-color: red;
+    color: white;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding: 1rem;
   }
   & > main {
     min-height: 100vh;
@@ -57,7 +60,7 @@ const Container = ({
         />
       </Head>
       <header>
-        <nav></nav>
+        <h1 className="title">{APP_NAME}</h1>
       </header>
       <main>
         <section>{children}</section>
