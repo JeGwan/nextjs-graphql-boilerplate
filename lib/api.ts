@@ -1,23 +1,18 @@
 import Axios, { AxiosInstance, AxiosRequestConfig } from "axios";
+import { API_END_POINT } from "./constants";
 interface ApiSuccessResponse<Result = any> {
-  success: true; // api가 기대 동작을 올바르게 수행했는지 나타내는 필드
-  result: Result; // 데이터가 담겨오는 필드
+  message: "SUCCESS";
+  result: 1;
+  timestamp: string;
+  data: Result;
 }
 interface ApiFailedResponse {
-  success: false;
-  error: {
-    // 에러가 담겨오는 필드
-    userMessage: string; // 유저에게 나타낼 메시지
-    devMessage: string; // 개발자가 볼 메시지
-    request?: {
-      // 요청으로 보낸 리퀘스트 인자들
-      headers: any;
-      body: any;
-      query: any;
-      params: any;
-    };
-  };
+  message: "FAIL";
+  result: 0;
+  timestamp: string;
+  error: any;
 }
+
 export type ApiResponse<Result = any> =
   | ApiSuccessResponse<Result>
   | ApiFailedResponse;
@@ -28,7 +23,7 @@ class Api {
   private axios: AxiosInstance;
   constructor(ctx?: any) {
     const config: AxiosRequestConfig = {
-      baseURL: process.env.API_END_POINT as string,
+      baseURL: API_END_POINT,
       headers: { "Content-Type": "application/json" },
     };
     this.axios = Axios.create(config);

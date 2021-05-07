@@ -1,9 +1,9 @@
 import React, { createContext, ReactNode, useState, useEffect } from "react";
-import { User } from "./types";
+import { Host } from "./types";
 
 interface AppContextType {
-  me?: User | null;
-  setMe: (me: User) => void;
+  me?: Host | null;
+  setMe: (me: Host) => void;
 }
 interface AppContextProviderProps {
   children?: ReactNode;
@@ -14,7 +14,7 @@ export const AppContext = createContext<AppContextType>({
 });
 
 export const AppContextProvider = ({ children }: AppContextProviderProps) => {
-  const [me, setMe] = useState<User | null>();
+  const [me, setMe] = useState<Host | null>();
 
   useEffect(() => {
     if (!me) {
