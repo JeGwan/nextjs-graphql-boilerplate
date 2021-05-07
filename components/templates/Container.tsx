@@ -59,9 +59,6 @@ const Container = ({
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0"
         />
       </Head>
-      <header>
-        <h1 className="title">{APP_NAME}</h1>
-      </header>
       <main>
         <section>{children}</section>
       </main>
