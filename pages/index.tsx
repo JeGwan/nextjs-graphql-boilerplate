@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import Container from "@components/templates/Container";
-import { GET_EXCHANGE_RATES } from "graphqls/test";
+import { GET_EXCHANGE_RATES } from "../graphqls/rates";
 import React from "react";
 
 const IndexPage = () => {
